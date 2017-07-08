@@ -5,9 +5,9 @@ class PostsController < ApplicationController
     @authors = Author.all
    
     # filter the @posts list based on user input
-    if !params[:author].blank?
+    if !params[:author_id].blank?
       binding.pry
-      @posts = Post.by_author(params[:author])
+      @posts = Post.by_author(params[:author_id])
     elsif !params[:date].blank?
       if params[:date] == "Today"
         @posts = Post.from_today

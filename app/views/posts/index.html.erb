@@ -5,7 +5,7 @@
   <h3>Filter posts:</h3>
   <%= form_tag("/posts", method: "get") do %>
     <div><%= label_tag "Author" %></div>
-    <div><%= select_tag "author", options_from_collection_for_select(@authors, "id", "name"), include_blank: true %></div>
+    <div><%= select_tag "author_id", options_from_collection_for_select(@authors, "id", "name"), include_blank: true %></div>
 
     <div><%= label_tag "Post Age" %></div>
     <div><%= select_tag "date", options_for_select(["Today", "Old News"]), include_blank: true %></div>
