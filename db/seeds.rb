@@ -8,12 +8,11 @@
 Post.destroy_all
 Author.destroy_all
 
-author1 = Author.create(name: "Stephen King", genre: "Romance", bio: "Writes a lot of scary things.")
-author2 = Author.create(name: "Ariana Huffington", genre: "Comedy", bio: "Up and comer. One to watch.")
-author3 = Author.create(name: "Horse Ebooks", genre: "?????", bio: "Eclectic.")
+author1 = Author.create(name: 'Stephen King', genre: 'Romance', bio: 'Writes a lot of scary things.')
+author2 = Author.create(name: 'Ariana Huffington', genre: 'Comedy', bio: 'Up and comer. One to watch.')
+author3 = Author.create(name: 'Horse Ebooks', genre: '?????', bio: 'Eclectic.')
 
-
-#this makes use of HEREDOCs, which you can read more about here, doc: https://en.wikipedia.org/wiki/Here_document
+# this makes use of HEREDOCs, which you can read more about here, doc: https://en.wikipedia.org/wiki/Here_document
 post1 = <<-POST1
   Last night I dreamt there is more to life than to bully friends.
   What has that got to do with Democrats, you probably wonder...
@@ -40,9 +39,9 @@ post3 = <<-POST3
   But something wasn't right. I stumbled upon a giant banana.
   POST3
 
-Post.create(title: "Something about Democrats", description: post1, author: author1)
-Post.create(title: "SPAM SPAM SPAM", description: post2, author: author2)
-post = Post.create(title: "Links! Click Links!", description: post3, author: author3)
+Post.create(title: 'Something about Democrats', description: post1, author: author1)
+Post.create(title: 'SPAM SPAM SPAM', description: post2, author: author2)
+post = Post.create(title: 'Links! Click Links!', description: post3, author: author3)
 
-#set one to yesterday
+# set one to yesterday
 post.update_attribute(:created_at, Time.zone.today.advance(days: -1))
