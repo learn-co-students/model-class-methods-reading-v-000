@@ -1,12 +1,3 @@
-<% if !params[:author].blank? %>
-  <% @posts = Post.where(author: params[:author]) %>
-<% elsif !params[:date].blank? %>
-  <% if params[:date] == "Today" %>
-    <% @posts = Post.where("created_at >=?", Time.zone.today.beginning_of_day) %>
-  <% else %>
-    <% @posts = Post.where("created_at <?", Time.zone.today.beginning_of_day) %>
-  <% end %>
-<% end %>
 
 <h1>Believe It Or Not I'm Blogging On Air</h1>
 
@@ -17,7 +8,7 @@
 
   <% # options_from_collection_for_select:
      # returns a string of option tags that have been compiled by iterating over
-     # the collection (Author.all) and assigning the result of a call to the value_method (id) as
+     # the collection (@authors) and assigning the result of a call to the value_method (id) as
      # the option value and the text_method (name) as the option text
      %>
 
@@ -25,7 +16,7 @@
      # and returns a string of option tags
     %>
 
-    <%= select_tag "author", options_from_collection_for_select(Author.all, "id", "name"), include_blank: true %>
+    <%= select_tag "author", options_from_collection_for_select(@authors, "id", "name"), include_blank: true %>
     <%= select_tag "date", options_for_select(["Today", "Old News"]), include_blank: true %>
     <%= submit_tag "Filter" %>
   <% end %>
