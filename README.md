@@ -5,7 +5,7 @@
 1.  Know when to use a model class method
 2.  Create model class methods for custom queries
 
-## Lesson
+## Lesson/Lecture
 
 We're gonna keep working on our blog application and adding more
 features, so make sure to follow along and try out the code for yourself as
