@@ -5,8 +5,19 @@ class Post < ActiveRecord::Base
   belongs_to :author
 
   #put new code here
+	def self.by_author(author_id)
+		where(author: author_id)
+	end
 
-  private
+	def self.from_today
+		where("created_at >=?", Time.zone.today.beginning_of_day)
+	end
+	 
+	def self.old_news
+		where("created_at <?", Time.zone.today.beginning_of_day)
+	end
+  
+private
 
   def is_title_case
     if title.split.any?{|w|w[0].upcase != w[0]}
