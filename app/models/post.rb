@@ -6,6 +6,24 @@ class Post < ActiveRecord::Base
 
   #put new code here
 
+  def self.by_author(author_id)
+    self.where(author:author_id)
+  end
+
+  def self.by_author_including(author_id)
+    self.where(author:author_id).includes(:author)
+  end
+
+  def self.from_today
+      self.where("created_at >= ?", Time.zone.today.beginning_of_day)
+  end
+
+  def self.old_news
+    self.where("created_at >= ?", Time.zone.today.beginning_of_day)
+  end
+
+
+
   private
 
   def is_title_case

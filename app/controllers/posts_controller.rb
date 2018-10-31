@@ -1,7 +1,15 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all
+    @authors = Author.all
+    @posts = params[:author].blank? ? Post.all.includes(:author) : Post.by_author_including(params[:author])
+    case params[:date]
+    when "Today"
+      @posts = @posts.select{|p| p.created_at >= today_start}
+    when "Old News"
+      @posts = @posts.select{|p| p.created_at < today_start}
+    else
+    end
   end
 
   def show
