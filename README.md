@@ -1,4 +1,4 @@
-# Model Class Methods
+rake db:seed# Model Class Methods
 
 ## Objectives
 
