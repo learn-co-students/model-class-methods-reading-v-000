@@ -1238,3 +1238,85 @@ Started GET "/assets/authors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-27 15:26:19 -0500
+
+
+Started GET "/" for ::1 at 2018-11-29 18:24:46 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT "authors".* FROM "authors"
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mAuthor Load (0.3ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 12]]
+  Rendered posts/index.html.erb within layouts/application (71.5ms)
+Completed 200 OK in 881ms (Views: 846.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2018-11-29 18:24:48 -0500
+
+
+Started GET "/assets/authors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2018-11-29 18:24:48 -0500
+
+
+Started GET "/assets/authors.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-11-29 18:24:48 -0500
+
+
+Started GET "/posts?utf8=%E2%9C%93&author=10&commit=Filter" for ::1 at 2018-11-29 18:26:44 -0500
+Processing by PostsController#index as HTML
+  Parameters: {"utf8"=>"✓", "author"=>"10", "commit"=>"Filter"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 12]]
+  Rendered posts/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 49ms (Views: 47.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts?utf8=%E2%9C%93&author=10&commit=Filter" for ::1 at 2018-11-29 18:28:10 -0500
+Processing by PostsController#index as HTML
+  Parameters: {"utf8"=>"✓", "author"=>"10", "commit"=>"Filter"}
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT "authors".* FROM "authors"
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = 10[0m
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 10]]
+  Rendered posts/index.html.erb within layouts/application (44.1ms)
+Completed 200 OK in 69ms (Views: 62.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/posts?utf8=%E2%9C%93&author=10&commit=Filter" for ::1 at 2018-11-29 19:09:24 -0500
+Processing by PostsController#index as HTML
+  Parameters: {"utf8"=>"✓", "author"=>"10", "commit"=>"Filter"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."author_id" = 10
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 10]]
+  Rendered posts/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 54ms (Views: 53.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts?utf8=%E2%9C%93&author=&date=Today&commit=Filter" for ::1 at 2018-11-29 19:09:29 -0500
+Processing by PostsController#index as HTML
+  Parameters: {"utf8"=>"✓", "author"=>"", "date"=>"Today", "commit"=>"Filter"}
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT "authors".* FROM "authors"
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE (created_at >='2018-11-30 00:00:00.000000')[0m
+  Rendered posts/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts?utf8=%E2%9C%93&author=&date=Today&commit=Filter" for ::1 at 2018-11-29 19:22:49 -0500
+Processing by PostsController#index as HTML
+  Parameters: {"utf8"=>"✓", "author"=>"", "date"=>"Today", "commit"=>"Filter"}
+  [1m[35mAuthor Load (0.3ms)[0m  SELECT "authors".* FROM "authors"
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE (created_at >='2018-11-30 00:00:00.000000')[0m
+  Rendered posts/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 35ms (Views: 28.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts" for ::1 at 2018-11-29 19:29:36 -0500
+Processing by PostsController#index as HTML
+  [1m[35mAuthor Load (0.4ms)[0m  SELECT "authors".* FROM "authors"
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mAuthor Load (0.2ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mAuthor Load (0.1ms)[0m  SELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT 1  [["id", 12]]
+  Rendered posts/index.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 44ms (Views: 37.0ms | ActiveRecord: 1.7ms)
