@@ -7,7 +7,7 @@
 
 ## Lesson
 
-We're gonna keep working on our blog application and adding more
+We' re gonna keep working on our blog application and adding more
 features, so make sure to follow along and try out the code for yourself as
 we go!
 
