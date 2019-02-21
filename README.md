@@ -16,7 +16,7 @@ You might be surprised to see the big names that definitely wrote these
 example blog posts!
 
 #### Filtering Posts by Author
-
+ 
 We have our list of blog posts, which is great, but our readers would
 like to be able to filter the list by author. Let's do what every
 great blog does and pander to the masses!
