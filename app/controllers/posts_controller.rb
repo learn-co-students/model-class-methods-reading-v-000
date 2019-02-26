@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
 
-  de  @authors = Author.all
+  def index
+
+    @authors = Author.all
 
   # filter the @posts list based on user input
   if !params[:author].blank?
