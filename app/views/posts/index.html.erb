@@ -1,7 +1,7 @@
 
 <h1>Believe It Or Not I'm Blogging On Air</h1>
 
-<div class="">
+<div>
   <h3>Filter posts:</h3>
   <%= form_tag("/posts", method: "get") do %>
     <%= select_tag "author", options_from_collection_for_select(@authors, "id", "name"), include_blank: true %>
