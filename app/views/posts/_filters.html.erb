@@ -1,0 +1,15 @@
+<%= link_to 'Reset Filter', posts_path if filter_is_active? %>
+<div>
+  <h3>Filter posts:</h3>
+  <%= form_tag(posts_path, method: "get") do %>
+    <h4>by author:</h4>
+    <%= select_tag "author", options_from_collection_for_select(authors, "id", "name"), include_blank: true %>
+    <%= submit_tag "Filter" %>
+  <% end %>
+
+  <%= form_tag(posts_path, method: "get") do %>
+    <h4>by date:</h4>
+    <%= select_tag "date", options_for_select(["From Today", "Old News"]), include_blank: true %>
+    <%= submit_tag "Filter" %>
+  <% end %>
+</div>

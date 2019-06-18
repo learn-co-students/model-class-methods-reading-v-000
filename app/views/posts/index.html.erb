@@ -1,8 +1,12 @@
+<%= params.inspect %>
 <h1>Believe It Or Not I'm Blogging On Air</h1>
+
+<%= render partial: 'filters', locals: {authors: @authors} %>
+
 <% @posts.each do |post| %>
   <div>
     <h2><%= post.title %></h2>
-    <h3>by: <%= link_to post.author.name, author_path(post.author) %></h3>
+    <h3>by: <%= link_to post.author.name, author_path(post.author) if post.author.present? %></h3>
     <p><%= post.description %></p>
   </div>
 <% end %>
