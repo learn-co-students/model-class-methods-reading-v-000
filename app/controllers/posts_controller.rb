@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
-
+  helper_method :params
+  
   def index
+    # raise params.inspect
     @posts = Post.all
   end
 
