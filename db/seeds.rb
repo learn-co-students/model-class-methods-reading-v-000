@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Post.destroy_all
 Author.destroy_all
-
+puts "making seeds"
 author1 = Author.create(name: "Stephen King", genre: "Romance", bio: "Writes a lot of scary things.")
 author2 = Author.create(name: "Ariana Huffington", genre: "Comedy", bio: "Up and comer. One to watch.")
 author3 = Author.create(name: "Horse Ebooks", genre: "?????", bio: "Eclectic.")
@@ -43,6 +43,6 @@ post3 = <<-POST3
 Post.create(title: "Something about Democrats", description: post1, author: author1)
 Post.create(title: "SPAM SPAM SPAM", description: post2, author: author2)
 post = Post.create(title: "Links! Click Links!", description: post3, author: author3)
-
+puts "All done"
 #set one to yesterday
 post.update_attribute(:created_at, Time.zone.today.advance(days: -1))
