@@ -6,6 +6,20 @@ class Post < ActiveRecord::Base
 
   #put new code here
 
+  def self.by_author(author_id)
+    Post.all.select { |post| post.author.id == author_id }
+  end
+
+  def self.from_today
+    Post.all.select { |post| post.created_at.to_s >= Time.zone.today.beginning_of_day }
+    # where("created_at >=?", Time.zone.today.beginning_of_day)
+  end
+
+  def self.old_news
+    Post.all.select { |post| post.created_at.to_s < Time.zone.today.beginning_of_day }
+    # where("created_at <?", Time.zone.today.beginning_of_day)
+  end
+
   private
 
   def is_title_case
