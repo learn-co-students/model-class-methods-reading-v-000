@@ -1536,3 +1536,95 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for ::1 at 2021-05-06 18:56:49 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (17.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/luisherrera/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/luisherrera/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb (3.1ms)
+Completed 200 OK in 70ms (Views: 23.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for ::1 at 2021-05-06 18:57:05 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (77.1ms)
+Completed 200 OK in 357ms (Views: 313.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/posts?utf8=%E2%9C%93&author=13&commit=Filter&date=" for ::1 at 2021-05-06 18:58:41 -0500
+Processing by PostsController#index as HTML
+  Parameters: {"utf8"=>"✓", "author"=>"13", "commit"=>"Filter", "date"=>""}
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = 13[0m
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 19ms (Views: 16.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts?utf8=%E2%9C%93&author=&date=Today&commit=Filter" for ::1 at 2021-05-06 18:58:44 -0500
+Processing by PostsController#index as HTML
+  Parameters: {"utf8"=>"✓", "author"=>"", "date"=>"Today", "commit"=>"Filter"}
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (created_at >='2021-05-06 00:00:00')[0m
+  Rendered posts/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts?utf8=%E2%9C%93&author=&date=Old+News&commit=Filter" for ::1 at 2021-05-06 18:58:46 -0500
+Processing by PostsController#index as HTML
+  Parameters: {"utf8"=>"✓", "author"=>"", "date"=>"Old News", "commit"=>"Filter"}
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (created_at <'2021-05-06 00:00:00')[0m
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 18ms (Views: 16.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts?utf8=%E2%9C%93&author=15&commit=Filter&date=" for ::1 at 2021-05-06 18:58:48 -0500
+Processing by PostsController#index as HTML
+  Parameters: {"utf8"=>"✓", "author"=>"15", "commit"=>"Filter", "date"=>""}
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = 15[0m
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts?utf8=%E2%9C%93&author=&commit=Filter&date=" for ::1 at 2021-05-06 18:58:50 -0500
+Processing by PostsController#index as HTML
+  Parameters: {"utf8"=>"✓", "author"=>"", "commit"=>"Filter", "date"=>""}
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 18ms (Views: 16.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts?utf8=%E2%9C%93&author=&commit=Filter&date=" for ::1 at 2021-05-06 19:07:10 -0500
+Processing by PostsController#index as HTML
+  Parameters: {"utf8"=>"✓", "author"=>"", "commit"=>"Filter", "date"=>""}
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  Rendered posts/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 42ms (Views: 40.6ms | ActiveRecord: 0.6ms)
+
+
